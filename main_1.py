@@ -50,16 +50,19 @@ loyal_customers = pd.read_csv(path_3)
 
 
 # Tạo giao diện người dùng
-st.title("Dự đoán hành vi mua hàng của khách hàng")
+st.title("🔻 Dự đoán hành vi mua hàng của khách hàng")
+st.markdown('''
+    :blue[ Sản phẩm  của  luonglv]''')
 
-st.button("Nhập Thông Tin Mua Hàng Vào Đây")
+
+st.button("🙍‍♂️ Nhập Thông Tin Mua Hàng Vào Đây")
 # Nhập thông tin từ người dùng
 recency = st.number_input("Recency")
 frequency = st.number_input("Frequency")
 monetary_value = st.number_input("Monetary Value")
 
 # Dự đoán khi người dùng nhấn nút
-if st.button("Dự Đoán"):
+if st.button("🎯 Dự Đoán"):
     input_data = pd.DataFrame([[recency, frequency, monetary_value]], columns=['Recency', 'Frequency', 'MonetaryValue'])
     prediction = loaded_model.predict(input_data)
     st.write(f"Kết quả Dự đoán: {prediction[0]}")
@@ -73,7 +76,9 @@ if st.button("Dự Đoán"):
         st.write("Nhóm khách hàng đang rời bỏ tần suất mua cực thấp, ngày gần đây mua là tập trung phổ biến 17 ngày gần  đây chính vì thế giá trị đem lại cũng thấp nhất. Nên có khảo sát xem nguyên nhân từ đâu, gọi điện tư vấn và đưa ra kịch bản thuyết phục.")
     elif prediction[0] == "Loyal Customers":
         st.write("Nhóm khách hàng VIP của công ty tần suất mua lớn, ngày gần đây mua tập trung nhiều 2 ngày gân  đây. Giống như nhóm best customer đây là nhóm trung thành nên có những chương trình ưu đãi đặc biệt cho nhóm sản phẩm này hoặc chi ân ngày sinh nhật để khách hàng cảm thấy chân trọng và sử dụng nhiều hơn.")
-    st.button("Lịch Sử Mua Hàng Trước Đây Nhóm Khách Hàng Này")
+    
+    st.button("💰 Lịch Sử Mua Hàng Trước Đây Nhóm Khách Hàng Này")
+
         #vẽ  biểu  đồ  lịch  sử  mua  hàng  trước  đây
     if prediction[0] == "At Risk Customers":
         # Vẽ biểu đồ
@@ -140,3 +145,15 @@ if st.button("Dự Đoán"):
 
 # Hiển thị biểu đồ trong Streamlit
             st.pyplot(plt)
+
+    st.button("💹 Gợi ý tư vấn mua sản phẩm mới hoặc mua thêm")
+    if prediction[0] == "At Risk Customers":
+        st.write("Tại tháng 09 nhóm khách hàng này có  xu  hướng  dùng  sản  phẩm 2 thấp nhưng  bù  lại  sản  phẩm  1 tăng đột  biến, nên  tư  vấn  dòng  sản  phẩm  2 và duy  trì  sản  phẩm  0.")
+    elif prediction[0] == "Best Customers":
+        st.write("Nhóm khách  hàng  tại  tháng  09 có  xu  hướng  sử  dụng  sản  phẩm  2 giảm mạnhh, sản  phẩm  0 đang phục  hồi, sản phẩm  3 ổn định. Nên tư vân  mua  thêm  sản  phẩm  0.")
+    elif prediction[0] == "Lost Customers":
+        st.write("Nhóm khách hàng này trong  tháng  09 có  xu  hướng  sử  dụng  2 sản  phẩm 2 và 0, nên tập  trung  tư  vấn  nhóm  02 vì  tháng  10 có  thể  giảm. ")
+    elif prediction[0] == "Loyal Customers":
+        st.write("Nhóm khách hàng này trong  tháng  09 có  như  cầu  sử  dụng  3 sản phẩm  như nhau, nên  chú  trọng  cách  thức  trọng  sóc.")
+
+st.button("🎈 Gợi ý chi  tiết  sản  phẩm")
