@@ -96,7 +96,7 @@ pure_eval @ file:///home/conda/feedstock_root/build_artifacts/pure_eval_17215857
 pyarrow @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_20mrtbsygp/croot/pyarrow_1707330841142/work/python
 pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1711811537435/work
 pydeck @ file:///home/conda/feedstock_root/build_artifacts/pydeck_1667589451974/work
-Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1714846767233/work
+Pygments @ file:///home/conda/feedstock_rooỉet/build_artifacts/pygments_1714846767233/work
 pyodbc @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_2199ss_azm/croot/pyodbc_1725560243473/work
 pyparsing @ file:///private/var/folders/c_/qfmhj66j0tn016nkx_th4hxm0000gp/T/abs_9dbsgn56nh/croot/pyparsing_1725041641537/work
 PyQt5==5.15.10
